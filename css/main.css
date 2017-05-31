@@ -1,0 +1,11 @@
+.contenido-carrusel {
+    display: none;
+}
+
+.contenido-carrusel.activo {
+    display: block;
+}
+
+.contenido-carrusel>img{
+    width: 100%;
+}
