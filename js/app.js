@@ -6,41 +6,29 @@ var cargarPagina = function () {
     var botonEnviar = $("#botonEnviar");
     areaTexto.keyup(contadoraDeCaracteres);
     botonEnviar.click(publicarTwit);
+};
 
-    function contadoraDeCaracteres() {
-        contadorCaracteres = 140 - (areaTexto.val().length);
-        var cantidadCaracteres = $("#cantidadCaracteres");
-        cantidadCaracteres.text(contadorCaracteres + "/140");
-    };
-
-
+var contadoraDeCaracteres = function () {
+    var cantidadCaracteres = $("#cantidadCaracteres");
+    contadorCaracteres = 140 - ($(areaTexto).val().length);
+    cantidadCaracteres.text(contadorCaracteres + "/140");
 };
 
 var publicarTwit = function () {
-    if (areaTexto.value !== "") {
+    if ($(areaTexto).val() !== "" && $(areaAutor).val() !== "") {
         var seccionPublicaciones = $("#publicaciones");
-       
-        var tarjetaPublicacion = document.createElement("article");
-        tarjetaPublicacion.classList = "card";
-        var twitNuevo = document.createElement("p");
-        var autorTwit = document.createElement("h5");
+        var tarjetaPublicacion = $(document.createElement("article")).addClass("card");
+        var twitNuevo = $(document.createElement("p")).text($(areaTexto).val());
+        var autorTwit = $(document.createElement("h5")).text($(areaAutor).val());
 
-        twitNuevo.innerText = areaTexto.value;
-        autorTwit.innerText = areaAutor.value;
+        tarjetaPublicacion.append($(autorTwit));
+        tarjetaPublicacion.append($(twitNuevo));
+        seccionPublicaciones.prepend($(tarjetaPublicacion));
 
-        tarjetaPublicacion.appendChild(autorTwit);
-        tarjetaPublicacion.appendChild(twitNuevo);
-        console.log(tarjetaPublicacion)
-
-        seccionPublicaciones.prepend(tarjetaPublicacion);
-
-        areaTexto.value = "";
-        areaAutor.value = "";
-        
+        $(areaTexto).val("");
+        $(areaAutor).val("");
+        $(cantidadCaracteres).text("140/140");
     }
 }
-
-
-
 
 $(document).ready(cargarPagina);
