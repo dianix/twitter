@@ -5,13 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>twitter</title>
+    <link rel="shorcut icon" type="image/x-icon" href="assets/imgs/twirer.ico">
     <link rel="stylesheet" href="css/materialize.min.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
     <script src="https://use.fontawesome.com/e7261129df.js"></script>
 </head>
 
+
 <body>
+    <header class="navbar-fixed">
+        <nav class="nav-wrapper grey lighten-5">
+            <a href="#" class="brand-logo center"><i class="fa fa-twitter teal-text text-lighten-1" aria-hidden="true"></i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down grey-text text-darken-3">
+                <li><a href="#!" class="grey-text text-darken-1"><i class="fa fa-bolt fa-lg pad-top left"></i> Momentos</a></li>
+                <li><a href="#!" class="grey-text text-darken-1"><i class="fa fa-bell fa-lg pad-top left"></i> Notificaciones</a></li>
+                <li><a href="#!" class="grey-text text-darken-1"><i class="fa fa-envelope fa-lg pad-top left"></i>Mensajes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="publicar" class="container teal lighten-5">
+        <!-- sección para introducir nuevo comentario y autor -->
+        <div class="row">
+            <div class="col s12 m4 input-field">
+                <input type="text" id="areaAutor" data-length="25">
+                <label for="areaAutor">¿Quien soy?</label>
+            </div>
+        </div>
+        <div class="row input-field">
+            <label for="areaTexto">¿Qué está pasando?</label>
+            <textarea id="areaTexto" class="materialize-textarea"></textarea>
+            <p id="cantidadCaracteres">140/140</p>
+            <button type="button" id="botonEnviar" class="waves-effect waves-light btn"><img src="assets/imgs/plumita.svg" id="plumita"><b>Twittear</b></button>
+        </div>
+    </form>
+
+    <section id="publicaciones" class="container grey-text text-darken-2">
+        <h3 class="teal-text text-darken-1"><b>Publicaciones</b></h3>
+        <!-- SECCIÓN PARA TWITTERS PUBLICADOS -->
+        <article class="card">
+            <!-- estructura para twits nuevos -->
+            <h5>Twiteando</h5>
+            <p>Este es un twit de muestra.</p>
+        </article>
+    </section>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/materialize.min.js"></script>
