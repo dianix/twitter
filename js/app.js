@@ -17,12 +17,12 @@ var contadoraDeCaracteres = function () {
 var publicarTwit = function () {
     if ($(areaTexto).val() !== "" && $(areaAutor).val() !== "") {
         var seccionPublicaciones = $("#publicaciones");
-        var tarjetaPublicacion = $(document.createElement("article")).addClass("card");
-        var twitNuevo = $(document.createElement("p")).text($(areaTexto).val());
+        var tarjetaPublicacion = $("<article/>").addClass("card");
+        var twitNuevo = $("<p/>").text($(areaTexto).val());
         var autorTwit = $(document.createElement("h5")).text($(areaAutor).val());
 
-        tarjetaPublicacion.append($(autorTwit));
-        tarjetaPublicacion.append($(twitNuevo));
+        tarjetaPublicacion.append($(autorTwit)).append($(twitNuevo));
+        
         seccionPublicaciones.prepend($(tarjetaPublicacion));
 
         $(areaTexto).val("");
