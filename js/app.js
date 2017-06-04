@@ -43,7 +43,7 @@ var publicarTwit = function () {
     seccionPublicaciones.prepend($(tarjetaPublicacion));
     // Reinicializar valores
     limpiarAreas();
-    $(cantidadCaracteres).text("140/140");
+    $(cantidadCaracteres).text("140/140").css("color","black");
 
 }
 
