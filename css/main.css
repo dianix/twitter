@@ -2,7 +2,8 @@ body {
     font-family: sans-serif;
 }
 
-header>nav>a.brand-logo, header>nav>a.brand-logo>i {
+header>nav>a.brand-logo,
+header>nav>a.brand-logo>i {
     margin: 0;
     padding: 0;
     line-height: 4rem;
@@ -21,7 +22,7 @@ header>nav>a.brand-logo, header>nav>a.brand-logo>i {
 
 #publicar div p {
     text-align: right;
-    margin:0;
+    margin: 0;
     font-size: .8rem;
 }
 
@@ -32,4 +33,6 @@ header>nav>a.brand-logo, header>nav>a.brand-logo>i {
 
 article.card {
     padding: .5rem 1rem;
+    word-break: break-all;
+    word-wrap: break-word;
 }
