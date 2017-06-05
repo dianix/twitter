@@ -39,7 +39,7 @@ article.card {
 
 article.card a {
     color: #d0d0d0;
-    margin-left: 97%;
+    margin-left: 98%;
 }
 
 article.card a:hover {
@@ -50,5 +50,5 @@ article.card a:hover {
 article.card h6 {
     font-size: .8rem;
     text-align: right;
-    color: #68aca6;
+    color: #8bcbc5;
 }
