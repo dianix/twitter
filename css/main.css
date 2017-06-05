@@ -37,6 +37,16 @@ article.card {
     word-wrap: break-word;
 }
 
+article.card a {
+    color: #d0d0d0;
+    margin-left: 97%;
+}
+
+article.card a:hover {
+    cursor: pointer;
+    color: #00968b;
+}
+
 article.card h6 {
     font-size: .8rem;
     text-align: right;

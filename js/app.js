@@ -9,6 +9,8 @@ var cargarPagina = function () {
     areaTexto.keyup(contadoraDeCaracteres);
     areaTexto.keyup(validarMensaje);
     botonEnviar.click(publicarTwit);
+    // Para agregar función borrar a twit de muestra
+    $("#publicaciones article.card a").click(borrarTwit);
 };
 
 var contadoraDeCaracteres = function () {
@@ -34,16 +36,18 @@ var publicarTwit = function () {
     var seccionPublicaciones = $("#publicaciones");
     //creando elementos y guardando valores
     var tarjetaPublicacion = $("<article/>").addClass("card");
+    var twitBorrar = $("<a/>").append("<i/>").addClass("fa fa-times");
+    twitBorrar.click(borrarTwit);
     var twitNuevo = $("<p/>").text($(areaTexto).val());
     var autorTwit = $(document.createElement("h5")).text($(areaAutor).val());
     var horaTwit = $("<h6/>").text(fechaPublicación());
     // Publicando 
-    tarjetaPublicacion.append($(autorTwit)).append($(twitNuevo)).append($(horaTwit));
+    tarjetaPublicacion.append($(twitBorrar)).append($(autorTwit)).append($(twitNuevo)).append($(horaTwit));
     seccionPublicaciones.prepend($(tarjetaPublicacion));
     // Reinicializar valores
     limpiarAreas();
     $(cantidadCaracteres).text("140/140").css("color", "black");
-}
+};
 
 var limpiarAreas = function () {
     $(areaTexto).val("");
@@ -69,7 +73,10 @@ var fechaPublicación = function () {
     minutos = minutos <= 9 ? "0"+minutos : minutos;
     var fechaHora = fecha + " " + hora + ":" + minutos;
     return (fechaHora);
-}
+};
 
+var borrarTwit = function () {
+    $(this).parent().remove();
+};
 
 $(document).ready(cargarPagina);
