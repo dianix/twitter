@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Verdana' sans-serif;
 }
 
 header>nav>a.brand-logo,
@@ -35,4 +35,10 @@ article.card {
     padding: .5rem 1rem;
     word-break: break-all;
     word-wrap: break-word;
+}
+
+article.card h6 {
+    font-size: .8rem;
+    text-align: right;
+    color: #68aca6;
 }
